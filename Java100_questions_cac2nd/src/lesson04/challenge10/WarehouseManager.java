@@ -61,12 +61,27 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
+		int[] MQC = new int[5];
+		int[] MQD = new int[5];
+		int[] MQE = new int[5];
 
+		int[][] MQAll = new int[3][5];
+		MQAll[0] = MQC;
+		MQAll[1] = MQD;
+		MQAll[2] = MQE;
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
+		for (int i = 0; i < MQAll.length; i++) {
+			for (int j = 0; j < MQAll[0].length; j++) {
+				int rand = (int) (Math.random() * 10) % 4;
+				if (rand == 0) {
+					MQAll[i][j] = 0;
+				} else {
+					MQAll[i][j] = (int) (Math.random() * 10) % 10 + 1;
+				}
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送から預かった荷物の確認をお願いします。\n");
@@ -76,22 +91,31 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
-
+		for (int i = 0; i < MQC.length; i++) {
+			System.out.print(MQC[i]);
+			if (i != (MQC.length - 1)) {
+				System.out.print(",");
+			}
+		}
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
-
+		for (int i = 0; i < MQD.length; i++) {
+			System.out.print(MQD[i]);
+			if (i != (MQD.length - 1)) {
+				System.out.print(",");
+			}
+		}
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
-
+		for (int i = 0; i < MQD.length; i++) {
+			System.out.print(MQD[i]);
+			if (i != (MQD.length - 1)) {
+				System.out.print(",");
+			}
+		}
 		System.out.println("\n\nです。\n");
 
 		System.out.println("E主任：");
